@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="finBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050a14"/>
+      <stop offset="100%" stop-color="#0c1524"/>
+    </linearGradient>
+    <linearGradient id="chartCyan" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#finBg)"/>
+
+  <!-- Top Bar -->
+  <rect width="800" height="45" fill="#04070e"/>
+  <circle cx="30" cy="22" r="8" fill="#10b981"/>
+  <text x="50" y="27" fill="#ffffff" font-family="sans-serif" font-size="14" font-weight="bold">SpendWise Analytics</text>
+  <rect x="670" y="10" width="100" height="26" rx="13" fill="#1e293b"/>
+  <text x="720" y="27" fill="#38bdf8" font-family="sans-serif" font-size="10" font-weight="bold" text-anchor="middle">+ Add Expense</text>
+
+  <!-- Metric 1: Total Balance -->
+  <rect x="30" y="65" width="230" height="85" rx="12" fill="#0c1527" stroke="#1e293b" stroke-width="1.5"/>
+  <text x="50" y="90" fill="#94a3b8" font-family="sans-serif" font-size="11">TOTAL NET BALANCE</text>
+  <text x="50" y="125" fill="#ffffff" font-family="sans-serif" font-size="24" font-weight="900">$24,870.50</text>
+  <text x="195" y="125" fill="#10b981" font-family="sans-serif" font-size="11" font-weight="bold">+12.4%</text>
+
+  <!-- Metric 2: Monthly Expenses -->
+  <rect x="285" y="65" width="230" height="85" rx="12" fill="#0c1527" stroke="#1e293b" stroke-width="1.5"/>
+  <text x="305" y="90" fill="#94a3b8" font-family="sans-serif" font-size="11">MONTHLY SPEND</text>
+  <text x="305" y="125" fill="#f43f5e" font-family="sans-serif" font-size="24" font-weight="900">$3,420.00</text>
+  <text x="450" y="125" fill="#38bdf8" font-family="sans-serif" font-size="11" font-weight="bold">Under Budget</text>
+
+  <!-- Metric 3: Savings Target -->
+  <rect x="540" y="65" width="230" height="85" rx="12" fill="#0c1527" stroke="#1e293b" stroke-width="1.5"/>
+  <text x="560" y="90" fill="#94a3b8" font-family="sans-serif" font-size="11">SAVINGS GOAL (84%)</text>
+  <text x="560" y="125" fill="#38bdf8" font-family="sans-serif" font-size="24" font-weight="900">$18,500.00</text>
+  
+  <!-- Left: Interactive Cashflow Chart -->
+  <rect x="30" y="170" width="485" height="255" rx="12" fill="#0a1222" stroke="#1e293b" stroke-width="1.5"/>
+  <text x="50" y="200" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="bold">Cashflow &amp; Trend Forecast</text>
+  
+  <!-- Area Chart Wave -->
+  <path d="M50,370 Q130,290 200,320 T350,260 T480,240 L480,390 L50,390 Z" fill="url(#chartCyan)"/>
+  <path d="M50,370 Q130,290 200,320 T350,260 T480,240" fill="none" stroke="#38bdf8" stroke-width="3"/>
+  <circle cx="350" cy="260" r="5" fill="#38bdf8"/>
+  <rect x="315" y="225" width="70" height="24" rx="6" fill="#04070e" stroke="#38bdf8" stroke-width="1"/>
+  <text x="350" y="241" fill="#ffffff" font-family="sans-serif" font-size="10" font-weight="bold" text-anchor="middle">$4,850</text>
+
+  <!-- Right: Recent Transactions List -->
+  <rect x="540" y="170" width="230" height="255" rx="12" fill="#0a1222" stroke="#1e293b" stroke-width="1.5"/>
+  <text x="560" y="200" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="bold">Recent Ledger</text>
+
+  <!-- Transaction 1 -->
+  <rect x="555" y="220" width="200" height="42" rx="8" fill="#101a2f"/>
+  <circle cx="575" cy="241" r="10" fill="#0284c7"/>
+  <text x="595" y="238" fill="#f8fafc" font-family="sans-serif" font-size="10" font-weight="bold">Cloud Servers</text>
+  <text x="595" y="252" fill="#64748b" font-family="sans-serif" font-size="8">DevOps &amp; Infra</text>
+  <text x="740" y="245" fill="#f43f5e" font-family="sans-serif" font-size="10" font-weight="bold" text-anchor="end">-$145.00</text>
+
+  <!-- Transaction 2 -->
+  <rect x="555" y="272" width="200" height="42" rx="8" fill="#101a2f"/>
+  <circle cx="575" cy="293" r="10" fill="#059669"/>
+  <text x="595" y="290" fill="#f8fafc" font-family="sans-serif" font-size="10" font-weight="bold">SaaS Dividend</text>
+  <text x="595" y="304" fill="#64748b" font-family="sans-serif" font-size="8">Passive Income</text>
+  <text x="740" y="297" fill="#10b981" font-family="sans-serif" font-size="10" font-weight="bold" text-anchor="end">+$1,280.00</text>
+
+  <!-- Transaction 3 -->
+  <rect x="555" y="324" width="200" height="42" rx="8" fill="#101a2f"/>
+  <circle cx="575" cy="345" r="10" fill="#7c3aed"/>
+  <text x="595" y="342" fill="#f8fafc" font-family="sans-serif" font-size="10" font-weight="bold">Office Workstation</text>
+  <text x="595" y="356" fill="#64748b" font-family="sans-serif" font-size="8">Hardware Setup</text>
+  <text x="740" y="349" fill="#f43f5e" font-family="sans-serif" font-size="10" font-weight="bold" text-anchor="end">-$890.00</text>
+</svg>

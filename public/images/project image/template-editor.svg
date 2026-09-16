@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070b16"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="canvasGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c1324"/>
+      <stop offset="100%" stop-color="#070c18"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="800" height="450" fill="url(#bgGrad)"/>
+  
+  <!-- Window Top Bar -->
+  <rect width="800" height="40" fill="#04070e"/>
+  <circle cx="25" cy="20" r="5" fill="#ef4444"/>
+  <circle cx="45" cy="20" r="5" fill="#f59e0b"/>
+  <circle cx="65" cy="20" r="5" fill="#10b981"/>
+  <rect x="250" y="10" width="300" height="20" rx="6" fill="#1e293b" opacity="0.6"/>
+  <text x="400" y="24" fill="#94a3b8" font-family="monospace" font-size="11" text-anchor="middle">pageforge.studio/editor/v2</text>
+
+  <!-- Left Sidebar: Component Tree -->
+  <rect x="0" y="40" width="180" height="410" fill="#080e1c" stroke="#1e293b" stroke-width="1"/>
+  <text x="20" y="70" fill="#38bdf8" font-family="sans-serif" font-size="12" font-weight="bold">BLOCK LIBRARY</text>
+  
+  <rect x="15" y="88" width="150" height="34" rx="8" fill="#111c33" stroke="#38bdf8" stroke-width="1"/>
+  <text x="30" y="110" fill="#f8fafc" font-family="sans-serif" font-size="11">❖ Hero Section</text>
+  
+  <rect x="15" y="130" width="150" height="34" rx="8" fill="#0d1527"/>
+  <text x="30" y="152" fill="#94a3b8" font-family="sans-serif" font-size="11">❖ Feature Grid</text>
+
+  <rect x="15" y="172" width="150" height="34" rx="8" fill="#0d1527"/>
+  <text x="30" y="194" fill="#94a3b8" font-family="sans-serif" font-size="11">❖ Pricing Table</text>
+
+  <rect x="15" y="214" width="150" height="34" rx="8" fill="#0d1527"/>
+  <text x="30" y="236" fill="#94a3b8" font-family="sans-serif" font-size="11">❖ Testimonials</text>
+
+  <!-- Center Canvas Area -->
+  <rect x="205" y="60" width="390" height="365" rx="14" fill="url(#canvasGrad)" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="4 2"/>
+  
+  <!-- Canvas Device Bar -->
+  <rect x="205" y="60" width="390" height="32" rx="14" fill="#0f1a30"/>
+  <rect x="370" y="70" width="60" height="12" rx="6" fill="#1e293b"/>
+  <circle cx="350" cy="76" r="4" fill="#38bdf8"/>
+  <circle cx="450" cy="76" r="4" fill="#64748b"/>
+
+  <!-- Canvas Website Preview -->
+  <rect x="225" y="110" width="350" height="110" rx="10" fill="#121e36"/>
+  <text x="245" y="145" fill="#f8fafc" font-family="sans-serif" font-size="16" font-weight="900">Enterprise Next.js SaaS</text>
+  <text x="245" y="168" fill="#94a3b8" font-family="sans-serif" font-size="10">High-conversion drag-and-drop template builder.</text>
+  <rect x="245" y="182" width="90" height="24" rx="12" fill="url(#cyanGrad)"/>
+  <text x="290" y="198" fill="#ffffff" font-family="sans-serif" font-size="10" font-weight="bold" text-anchor="middle">Deploy Now</text>
+
+  <!-- Canvas Section 2 -->
+  <rect x="225" y="235" width="168" height="85" rx="8" fill="#101a2f"/>
+  <rect x="407" y="235" width="168" height="85" rx="8" fill="#101a2f"/>
+
+  <!-- Canvas Section 3 Footer -->
+  <rect x="225" y="335" width="350" height="70" rx="8" fill="#0d1526"/>
+
+  <!-- Right Sidebar: Inspector -->
+  <rect x="620" y="40" width="180" height="410" fill="#080e1c" stroke="#1e293b" stroke-width="1"/>
+  <text x="635" y="70" fill="#38bdf8" font-family="sans-serif" font-size="12" font-weight="bold">STYLE INSPECTOR</text>
+  
+  <text x="635" y="98" fill="#94a3b8" font-family="sans-serif" font-size="10">Typography</text>
+  <rect x="635" y="106" width="150" height="24" rx="4" fill="#111c33"/>
+  <text x="645" y="122" fill="#f8fafc" font-family="monospace" font-size="10">Inter Bold</text>
+
+  <text x="635" y="148" fill="#94a3b8" font-family="sans-serif" font-size="10">Primary Color</text>
+  <rect x="635" y="156" width="26" height="26" rx="6" fill="#38bdf8"/>
+  <rect x="670" y="156" width="115" height="26" rx="6" fill="#111c33"/>
+  <text x="680" y="173" fill="#f8fafc" font-family="monospace" font-size="10">#38BDF8</text>
+
+  <text x="635" y="208" fill="#94a3b8" font-family="sans-serif" font-size="10">Padding / Spacing</text>
+  <rect x="635" y="216" width="150" height="8" rx="4" fill="#1e293b"/>
+  <rect x="635" y="216" width="95" height="8" rx="4" fill="#38bdf8"/>
+  <circle cx="730" cy="220" r="6" fill="#f8fafc"/>
+
+  <rect x="635" y="370" width="150" height="34" rx="17" fill="url(#cyanGrad)"/>
+  <text x="710" y="391" fill="#ffffff" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle">Export HTML/CSS</text>
+</svg>
