@@ -19,20 +19,17 @@ export default function Contact({ onOpenAI }) {
     setIsSuccess(false);
 
     try {
+      const formDataToSend = new FormData();
+      formDataToSend.append('access_key', WEB3FORMS_KEY);
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('subject', formData.subject || `New Portfolio Message from ${formData.name}`);
+      formDataToSend.append('message', formData.message);
+      formDataToSend.append('from_name', 'Gaurav Portfolio Contact');
+
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify({
-          access_key: WEB3FORMS_KEY,
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject || `New Portfolio Message from ${formData.name}`,
-          message: formData.message,
-          from_name: 'Gaurav Portfolio Contact',
-        }),
+        body: formDataToSend,
       });
 
       const result = await response.json();
@@ -356,6 +353,7 @@ export default function Contact({ onOpenAI }) {
                       </label>
                       <input
                         type="text"
+                        name="name"
                         required
                         placeholder="Enter your name"
                         value={formData.name}
@@ -370,6 +368,7 @@ export default function Contact({ onOpenAI }) {
                       </label>
                       <input
                         type="email"
+                        name="email"
                         required
                         placeholder="Enter your email address"
                         value={formData.email}
@@ -386,6 +385,7 @@ export default function Contact({ onOpenAI }) {
                     </label>
                     <input
                       type="text"
+                      name="subject"
                       required
                       placeholder="e.g. Project Inquiry / Job Opportunity"
                       value={formData.subject}
@@ -401,6 +401,7 @@ export default function Contact({ onOpenAI }) {
                     </label>
                     <textarea
                       rows={4}
+                      name="message"
                       required
                       placeholder="Write your message or project details here..."
                       value={formData.message}
