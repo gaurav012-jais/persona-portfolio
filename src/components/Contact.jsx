@@ -19,13 +19,8 @@ export default function Contact({ onOpenAI }) {
     setIsSuccess(false);
 
     try {
-      const formDataToSend = new FormData();
+      const formDataToSend = new FormData(e.target);
       formDataToSend.append('access_key', WEB3FORMS_KEY);
-      formDataToSend.append('name', formData.name);
-      formDataToSend.append('email', formData.email);
-      formDataToSend.append('subject', formData.subject || `New Portfolio Message from ${formData.name}`);
-      formDataToSend.append('message', formData.message);
-      formDataToSend.append('from_name', 'Gaurav Portfolio Contact');
 
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -37,6 +32,7 @@ export default function Contact({ onOpenAI }) {
       if (result.success) {
         setIsSuccess(true);
         setFormData({ name: '', email: '', subject: '', message: '' });
+        e.target.reset();
         setTimeout(() => {
           setIsSuccess(false);
         }, 7000);
