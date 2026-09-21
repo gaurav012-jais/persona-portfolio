@@ -11,7 +11,7 @@ const GAURAV_KNOWLEDGE = {
   phone: "+91 7905318230",
   whatsapp: "https://wa.me/917905318230",
   location: "Varanasi / Kanpur, India",
-  degree: "B.Tech in Computer Science & Engineering (2022 - 2026), CGPA: 7.65/10",
+  degree: "B.Tech in Information Technology (2022 - 2026), CGPA: 7.65/10",
   college: "DR. Ambedkar Institute of Technology for Divyangjan Kanpur",
   resumePath: "Mern_resume.pdf",
 
@@ -108,7 +108,7 @@ const GAURAV_KNOWLEDGE = {
 
   education: [
     {
-      degree: "Bachelor of Technology (B.Tech)",
+      degree: "Bachelor of Technology (B.Tech in IT)",
       institute: "DR. Ambedkar Institute of Technology for Divyangjan, Kanpur",
       period: "2022 – 2026",
       cgpa: "7.65 / 10"

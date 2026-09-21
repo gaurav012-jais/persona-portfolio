@@ -108,7 +108,7 @@ export default function AIAssistantModal({ isOpen, onClose }) {
         `• **Oracle Cloud Infrastructure (OCI) 2025 Certified AI Foundations Associate** (Cert ID: \`1025801570C125AICFA\`).\n` +
         `• Strong grasp of Machine Learning concepts, LLMs, and cloud infrastructure integration.\n\n` +
         `**4. ⚡ End-to-End Problem Solver & Fast Execution:**\n` +
-        `• Strong CS fundamentals (B.Tech in CS with **7.65 CGPA**).\n` +
+        `• Strong IT fundamentals (B.Tech in IT with **7.65 CGPA**).\n` +
         `• Seamlessly bridges responsive UI/UX with scalable backend APIs, database indexing, and Dockerized deployments.\n\n` +
         `👉 **Gaurav is available immediately for Full-Time MERN Stack, Frontend, or Backend Developer roles!**`;
     }

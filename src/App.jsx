@@ -10,12 +10,16 @@ import CertificationsEducation from './components/CertificationsEducation';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AIAssistantModal from './components/AIAssistantModal';
+import InteractiveTouchFX from './components/InteractiveTouchFX';
 
 export default function App() {
   const [isAIOpen, setIsAIOpen] = useState(false);
 
   return (
     <div className="relative min-h-screen bg-midnight-950 text-slate-100 font-sans selection:bg-cyan-500 selection:text-white">
+
+      {/* Global Interactive Mouse, Touch & Scroll FX */}
+      <InteractiveTouchFX />
 
       <div className="relative z-10">
         {/* Navigation Bar */}

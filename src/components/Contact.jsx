@@ -1,27 +1,56 @@
 import React, { useState } from 'react';
-import { Mail, Phone, Send, MapPin, CheckCircle, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, Send, MapPin, CheckCircle, ArrowUpRight, AlertCircle, Loader2 } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, FluidBrandLogo } from './Icons';
 import { RESUME_DATA } from '../data/resumeData';
+
+const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "28d9e152-7ab3-4641-92cc-f27aed7f6188";
 
 export default function Contact({ onOpenAI }) {
   const { personal } = RESUME_DATA;
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMessage('');
+    setIsSuccess(false);
 
-    setTimeout(() => {
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject || `New Portfolio Message from ${formData.name}`,
+          message: formData.message,
+          from_name: 'Gaurav Portfolio Contact',
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSuccess(true);
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setTimeout(() => {
+          setIsSuccess(false);
+        }, 7000);
+      } else {
+        setErrorMessage(result.message || 'Something went wrong. Please try again or email directly.');
+      }
+    } catch (error) {
+      setErrorMessage('Network connection error. Please check your internet or reach out via Email/WhatsApp.');
+    } finally {
       setIsSubmitting(false);
-      setIsSuccess(true);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-
-      setTimeout(() => {
-        setIsSuccess(false);
-      }, 5000);
-    }, 1000);
+    }
   };
 
   return (
@@ -308,7 +337,14 @@ export default function Contact({ onOpenAI }) {
                 {isSuccess && (
                   <div className="mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center gap-3 text-emerald-300 text-xs">
                     <CheckCircle className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                    <span>Thank you! Your message has been received. Gaurav will respond promptly.</span>
+                    <span>Thank you! Your message has been sent directly to Gaurav's inbox.</span>
+                  </div>
+                )}
+
+                {errorMessage && (
+                  <div className="mb-6 p-4 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center gap-3 text-rose-300 text-xs">
+                    <AlertCircle className="w-4 h-4 text-rose-400 flex-shrink-0" />
+                    <span>{errorMessage}</span>
                   </div>
                 )}
 
@@ -377,10 +413,19 @@ export default function Contact({ onOpenAI }) {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-cyan-600 hover:bg-cyan-500 shadow-glow-cyan-sm transition-all disabled:opacity-50 flex items-center justify-center gap-2"
+                    className="w-full py-3 rounded-full text-xs font-bold uppercase tracking-wider text-white bg-cyan-600 hover:bg-cyan-500 shadow-glow-cyan-sm transition-all disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   >
-                    <Send className="w-3.5 h-3.5" />
-                    <span>{isSubmitting ? 'Sending...' : 'Send Inquiry'}</span>
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                        <span>Sending message...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-3.5 h-3.5" />
+                        <span>Send Inquiry</span>
+                      </>
+                    )}
                   </button>
                 </form>
               </div>

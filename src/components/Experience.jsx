@@ -6,7 +6,7 @@ export default function Experience() {
   const roadmap = [
     {
       period: '2022 – 2026',
-      title: 'B.Tech in CS',
+      title: 'B.Tech in IT',
       organization: 'DR. Ambedkar Institute of Technology',
       desc: 'Focused on algorithms, database design, and web architecture with 7.65 CGPA.',
       icon: GraduationCap,

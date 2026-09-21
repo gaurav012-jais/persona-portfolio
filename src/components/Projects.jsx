@@ -253,79 +253,13 @@ export default function Projects() {
   return (
     <>
       {/* ============================================================ */}
-      {/* SECTION 1: "Digital experiences" — Clean White Premium Zone   */}
+      {/* SECTION 1: "Digital experiences" — Clean Pure White Section  */}
       {/* ============================================================ */}
-      <section id="projects" className="relative pt-0 pb-0 bg-white overflow-hidden">
-
-        {/* Top Wave Transition: Dark (#030509) to Sculpted White Silk Ribbon (matching About section exactly) */}
-        <div className="wave-top bg-midnight-950 -mb-[1px]">
-          <svg
-            viewBox="0 0 1440 120"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="none"
-            className="w-full"
-          >
-            <defs>
-              {/* Sculpted Silk Ribbon Shading Gradients */}
-              <linearGradient id="projWhiteRibbonBody" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#ffffff" />
-                <stop offset="100%" stopColor="#f8fafc" />
-              </linearGradient>
-
-              <linearGradient id="projSculptedFoldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#e2e8f0" stopOpacity="0.85" />
-                <stop offset="30%" stopColor="#f1f5f9" stopOpacity="0.95" />
-                <stop offset="70%" stopColor="#ffffff" stopOpacity="1" />
-                <stop offset="100%" stopColor="#e2e8f0" stopOpacity="0.5" />
-              </linearGradient>
-
-              <filter id="projWaveCreaseShadow" x="-10%" y="-10%" width="120%" height="120%">
-                <feDropShadow dx="0" dy="3" stdDeviation="4" floodColor="#94a3b8" floodOpacity="0.18" />
-              </filter>
-            </defs>
-
-            {/* Layer 1: Sculpted Secondary Silk Fold underneath */}
-            <path
-              d="M0,42 C180,68 360,18 640,28 C880,38 1120,65 1440,25 L1440,120 L0,120 Z"
-              fill="url(#projSculptedFoldGrad)"
-              opacity="0.6"
-            />
-
-            {/* Layer 2: Primary Sculpted Wave Curve */}
-            <path
-              d="M0,48 C200,75 420,24 680,32 C920,40 1160,70 1440,30 L1440,120 L0,120 Z"
-              fill="url(#projWhiteRibbonBody)"
-              filter="url(#projWaveCreaseShadow)"
-            />
-
-            {/* Layer 3: Subtle Crisp Silk Edge Highlight line along the crest */}
-            <path
-              d="M0,48 C200,75 420,24 680,32 C920,40 1160,70 1440,30"
-              stroke="rgba(255, 255, 255, 0.9)"
-              strokeWidth="1.5"
-            />
-          </svg>
-        </div>
-
-        {/* Subtle ambient light blurs for depth on white */}
-        <div className="absolute top-10 left-1/4 w-[500px] h-[500px] bg-cyan-100/40 rounded-full blur-[180px] pointer-events-none" />
-        <div className="absolute bottom-20 right-1/4 w-[400px] h-[400px] bg-blue-100/50 rounded-full blur-[160px] pointer-events-none" />
-        <div className="absolute top-1/2 left-0 w-[300px] h-[300px] bg-indigo-100/30 rounded-full blur-[140px] pointer-events-none" />
-
-        {/* Decorative fine-line grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.03] pointer-events-none"
-          style={{
-            backgroundImage: `linear-gradient(rgba(0,0,0,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.06) 1px, transparent 1px)`,
-            backgroundSize: '60px 60px',
-          }}
-        />
-
+      <section id="projects" className="relative py-20 lg:py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
 
           {/* Main Side-by-Side Showcase Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center pb-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
 
             {/* Left Column: Heading, Narrative, and Browse Button */}
             <div className="lg:col-span-4 flex flex-col items-start text-left">
@@ -345,39 +279,14 @@ export default function Projects() {
 
               <button
                 onClick={scrollToGrid}
-                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full text-xs font-extrabold tracking-wider uppercase text-white bg-slate-900 hover:bg-cyan-600 border border-slate-800 hover:border-cyan-500 shadow-[0_10px_30px_rgba(0,0,0,0.15)] hover:shadow-[0_0_25px_rgba(6,182,212,0.4)] transition-all duration-300 group cursor-pointer select-none"
+                className="inline-flex items-center justify-center px-6 py-3.5 rounded-full text-xs font-extrabold tracking-wider uppercase text-white bg-slate-900 hover:bg-cyan-600 border border-slate-800 hover:border-cyan-500 shadow-[0_10px_30px_rgba(0,0,0,0.15)] hover:shadow-[0_0_25px_rgba(6,182,212,0.4)] transition-all duration-300 group cursor-pointer select-none"
               >
                 <span>Explore All Projects</span>
-                <ArrowRight className="w-4 h-4 text-cyan-400 group-hover:text-white group-hover:translate-x-1 transition-all" />
               </button>
             </div>
 
             {/* Right Column: Infinite Scroll Carousel with All 12 Projects */}
             <div className="lg:col-span-8 relative group/carousel">
-              {/* Fade edges for seamless infinite feel */}
-              <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none" />
-              <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none" />
-
-              {/* Left Arrow Button */}
-              <button
-                type="button"
-                onClick={() => scrollManual('left')}
-                aria-label="Scroll left"
-                className="absolute left-2 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-slate-900/85 hover:bg-cyan-600 text-white border border-white/20 hover:border-cyan-400 shadow-[0_8px_25px_rgba(0,0,0,0.3)] backdrop-blur-md flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer opacity-80 hover:opacity-100"
-              >
-                <ChevronLeft className="w-5 h-5 text-slate-100" />
-              </button>
-
-              {/* Right Arrow Button */}
-              <button
-                type="button"
-                onClick={() => scrollManual('right')}
-                aria-label="Scroll right"
-                className="absolute right-2 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-slate-900/85 hover:bg-cyan-600 text-white border border-white/20 hover:border-cyan-400 shadow-[0_8px_25px_rgba(0,0,0,0.3)] backdrop-blur-md flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer opacity-80 hover:opacity-100"
-              >
-                <ChevronRight className="w-5 h-5 text-slate-100" />
-              </button>
-
               {/* Infinite scrolling track */}
               <div
                 ref={trackRef}
@@ -409,37 +318,6 @@ export default function Projects() {
             </div>
 
           </div>
-        </div>
-
-        {/* Bottom Wave Transition: White Silk to Dark (#030509) — matching About section exactly */}
-        <div className="wave-bottom bg-midnight-950 -mt-[1px]">
-          <svg
-            viewBox="0 0 1440 120"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="none"
-            className="w-full"
-          >
-            {/* Layer 1: Sculpted Secondary Fold */}
-            <path
-              d="M0,0 L1440,0 L1440,68 C1240,32 1020,18 780,24 C520,30 260,82 0,22 Z"
-              fill="url(#projSculptedFoldGrad)"
-              opacity="0.5"
-            />
-
-            {/* Layer 2: Primary Bottom Wave Curve */}
-            <path
-              d="M0,0 L1440,0 L1440,75 C1220,38 980,22 740,28 C480,34 240,85 0,18 Z"
-              fill="url(#projWhiteRibbonBody)"
-            />
-
-            {/* Layer 3: Subtle Crease Shadow Line */}
-            <path
-              d="M1440,75 C1220,38 980,22 740,28 C480,34 240,85 0,18"
-              stroke="rgba(148, 163, 184, 0.4)"
-              strokeWidth="1"
-            />
-          </svg>
         </div>
       </section>
 

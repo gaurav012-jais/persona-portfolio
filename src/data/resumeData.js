@@ -366,7 +366,7 @@ export const RESUME_DATA = {
     {
       institution: "DR. Ambedkar Institute of Technology for Divyangjan",
       location: "Kanpur",
-      degree: "Bachelor of Technology (B.Tech)",
+      degree: "Bachelor of Technology (B.Tech in IT)",
       score: "CGPA: 7.65/10",
       period: "2022 – 2026",
     },
