@@ -3,6 +3,7 @@ import { ExternalLink, ArrowRight, ArrowLeft, Sparkles, Grid, ChevronLeft, Chevr
 import { GithubIcon } from './Icons';
 import { RESUME_DATA } from '../data/resumeData';
 import Tilt3DCard from './Tilt3DCard';
+import FluidOceanWave from './FluidOceanWave';
 
 /* ── Infinite Scroll Carousel Card ── */
 function CarouselCard({ project, isFirstFour }) {
@@ -253,71 +254,156 @@ export default function Projects() {
   return (
     <>
       {/* ============================================================ */}
-      {/* SECTION 1: "Digital experiences" — Clean Pure White Section  */}
+      {/* SECTION 1: "Digital experiences" — Sculpted White Wave Ribbon */}
       {/* ============================================================ */}
-      <section id="projects" className="relative py-20 lg:py-24 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <section id="projects" className="relative z-20 overflow-hidden bg-midnight-950">
+        
+        {/* Top Wave Transition: Dark (#030509) to Sculpted White Silk Ribbon */}
+        <div className="wave-top bg-midnight-950 -mb-[1px]">
+          <svg
+            viewBox="0 0 1440 120"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="none"
+            className="w-full"
+          >
+            <defs>
+              <linearGradient id="projWhiteBody" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#ffffff" />
+                <stop offset="100%" stopColor="#f8fafc" />
+              </linearGradient>
 
-          {/* Main Side-by-Side Showcase Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+              <linearGradient id="projFoldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#e2e8f0" stopOpacity="0.85" />
+                <stop offset="30%" stopColor="#f1f5f9" stopOpacity="0.95" />
+                <stop offset="70%" stopColor="#ffffff" stopOpacity="1" />
+                <stop offset="100%" stopColor="#e2e8f0" stopOpacity="0.5" />
+              </linearGradient>
 
-            {/* Left Column: Heading, Narrative, and Browse Button */}
-            <div className="lg:col-span-4 flex flex-col items-start text-left">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-600 text-xs font-semibold tracking-wider uppercase mb-4">
-                <Sparkles className="w-3 h-3" />
-                <span>FEATURED PROJECTS</span>
+              <filter id="projWaveCreaseShadow" x="-10%" y="-10%" width="120%" height="120%">
+                <feDropShadow dx="0" dy="3" stdDeviation="4" floodColor="#94a3b8" floodOpacity="0.18" />
+              </filter>
+            </defs>
+
+            {/* Layer 1: Sculpted Secondary Silk Fold underneath */}
+            <path
+              d="M0,42 C180,68 360,18 640,28 C880,38 1120,65 1440,25 L1440,120 L0,120 Z"
+              fill="url(#projFoldGrad)"
+              opacity="0.6"
+            />
+
+            {/* Layer 2: Primary Sculpted Wave Curve */}
+            <path
+              d="M0,48 C200,75 420,24 680,32 C920,40 1160,70 1440,30 L1440,120 L0,120 Z"
+              fill="url(#projWhiteBody)"
+              filter="url(#projWaveCreaseShadow)"
+            />
+
+            {/* Layer 3: Subtle Crisp Silk Edge Highlight line along the crest */}
+            <path
+              d="M0,48 C200,75 420,24 680,32 C920,40 1160,70 1440,30"
+              stroke="rgba(255, 255, 255, 0.9)"
+              strokeWidth="1.5"
+            />
+          </svg>
+        </div>
+
+        {/* Main Sculpted White Ribbon Body */}
+        <div className="bg-gradient-to-b from-[#ffffff] via-[#fcfdfe] to-[#f8fafc] text-slate-800 py-12 sm:py-16 px-6 lg:px-8 relative z-10">
+          <div className="max-w-7xl mx-auto px-2 lg:px-4 relative z-10">
+
+            {/* Main Side-by-Side Showcase Layout */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+
+              {/* Left Column: Heading, Narrative, and Browse Button */}
+              <div className="lg:col-span-4 flex flex-col items-start text-left">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-600 text-xs font-semibold tracking-wider uppercase mb-4">
+                  <Sparkles className="w-3 h-3" />
+                  <span>FEATURED PROJECTS</span>
+                </div>
+
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-5">
+                  Digital experiences / <br />
+                  that make an <span className="font-serif italic font-normal text-cyan-600">impact.</span>
+                </h2>
+
+                <p className="text-xs sm:text-sm text-slate-500 font-medium leading-relaxed mb-8 max-w-md">
+                  Each project is a unique story of clean architecture, real-time data persistence, and relentless attention to detail.
+                </p>
+
+                <button
+                  onClick={scrollToGrid}
+                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-full text-xs font-extrabold tracking-wider uppercase text-white bg-slate-900 hover:bg-cyan-600 border border-slate-800 hover:border-cyan-500 shadow-[0_10px_30px_rgba(0,0,0,0.15)] hover:shadow-[0_0_25px_rgba(6,182,212,0.4)] transition-all duration-300 group cursor-pointer select-none"
+                >
+                  <span>Explore All Projects</span>
+                </button>
               </div>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-5">
-                Digital experiences / <br />
-                that make an <span className="font-serif italic font-normal text-cyan-600">impact.</span>
-              </h2>
-
-              <p className="text-xs sm:text-sm text-slate-500 font-medium leading-relaxed mb-8 max-w-md">
-                Each project is a unique story of clean architecture, real-time data persistence, and relentless attention to detail.
-              </p>
-
-              <button
-                onClick={scrollToGrid}
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-full text-xs font-extrabold tracking-wider uppercase text-white bg-slate-900 hover:bg-cyan-600 border border-slate-800 hover:border-cyan-500 shadow-[0_10px_30px_rgba(0,0,0,0.15)] hover:shadow-[0_0_25px_rgba(6,182,212,0.4)] transition-all duration-300 group cursor-pointer select-none"
-              >
-                <span>Explore All Projects</span>
-              </button>
-            </div>
-
-            {/* Right Column: Infinite Scroll Carousel with All 12 Projects */}
-            <div className="lg:col-span-8 relative group/carousel">
-              {/* Infinite scrolling track */}
-              <div
-                ref={trackRef}
-                onScroll={wrapScroll}
-                onMouseDown={handleMouseDown}
-                onMouseMove={handleMouseMove}
-                onMouseUp={handleMouseUp}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-                onTouchStart={handleTouchStart}
-                onTouchEnd={handleTouchEnd}
-                onClickCapture={handleCaptureClick}
-                className={`flex items-center gap-5 overflow-x-auto no-scrollbar py-6 px-2 select-none ${
-                  isDragging ? 'cursor-grabbing' : 'cursor-grab'
-                }`}
-              >
-                {carouselItems.map((project, idx) => {
-                  const originalIdx = idx % projects.length;
-                  const isFirstFour = originalIdx < 4;
-                  return (
-                    <CarouselCard
-                      key={`${project.id}-${idx}`}
-                      project={project}
-                      isFirstFour={isFirstFour}
-                    />
-                  );
-                })}
+              {/* Right Column: Infinite Scroll Carousel with All 12 Projects */}
+              <div className="lg:col-span-8 relative group/carousel">
+                {/* Infinite scrolling track */}
+                <div
+                  ref={trackRef}
+                  onScroll={wrapScroll}
+                  onMouseDown={handleMouseDown}
+                  onMouseMove={handleMouseMove}
+                  onMouseUp={handleMouseUp}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                  onTouchStart={handleTouchStart}
+                  onTouchEnd={handleTouchEnd}
+                  onClickCapture={handleCaptureClick}
+                  className={`flex items-center gap-5 overflow-x-auto no-scrollbar py-6 px-2 select-none ${
+                    isDragging ? 'cursor-grabbing' : 'cursor-grab'
+                  }`}
+                >
+                  {carouselItems.map((project, idx) => {
+                    const originalIdx = idx % projects.length;
+                    const isFirstFour = originalIdx < 4;
+                    return (
+                      <CarouselCard
+                        key={`${project.id}-${idx}`}
+                        project={project}
+                        isFirstFour={isFirstFour}
+                      />
+                    );
+                  })}
+                </div>
               </div>
-            </div>
 
+            </div>
           </div>
+        </div>
+
+        {/* Bottom Wave Transition: White Silk Ribbon to Dark (#030509) */}
+        <div className="wave-bottom bg-midnight-950 -mt-[1px]">
+          <svg
+            viewBox="0 0 1440 120"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="none"
+            className="w-full"
+          >
+            {/* Layer 1: Sculpted Secondary Fold */}
+            <path
+              d="M0,0 L1440,0 L1440,68 C1240,32 1020,18 780,24 C520,30 260,82 0,22 Z"
+              fill="url(#projFoldGrad)"
+              opacity="0.5"
+            />
+
+            {/* Layer 2: Primary Bottom Wave Curve */}
+            <path
+              d="M0,0 L1440,0 L1440,75 C1220,38 980,22 740,28 C480,34 240,85 0,18 Z"
+              fill="url(#projWhiteBody)"
+            />
+
+            {/* Layer 3: Subtle Crease Shadow Line */}
+            <path
+              d="M1440,75 C1220,38 980,22 740,28 C480,34 240,85 0,18"
+              stroke="rgba(148, 163, 184, 0.4)"
+              strokeWidth="1"
+            />
+          </svg>
         </div>
       </section>
 
@@ -326,19 +412,8 @@ export default function Projects() {
       {/* ============================================================ */}
       <section className="py-24 bg-midnight-950 relative overflow-hidden">
 
-        {/* 4K Luminous Blue Ocean Tide / Fluid Silk Wave Background */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 select-none">
-          <img
-            src="/images/hero-blue-tide.png"
-            alt="Luminous Blue Fluid Wave"
-            className="w-full h-full object-cover object-center opacity-75 mix-blend-screen filter brightness-105 contrast-110"
-            style={{
-              transform: 'scaleY(-1) scaleX(1.1)',
-              maskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 12%, rgba(0,0,0,1) 88%, transparent 100%)',
-              WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 12%, rgba(0,0,0,1) 88%, transparent 100%)',
-            }}
-          />
-        </div>
+        {/* Dynamic Animated Fluid Ocean Water Wave (Pure liquid, no rigid lines) */}
+        <FluidOceanWave variant="projects" opacity={0.82} />
 
         {/* Ambient background atmosphere */}
         <div className="absolute top-1/4 left-1/4 w-[550px] h-[550px] bg-cyan-500/10 rounded-full blur-[170px] pointer-events-none" />

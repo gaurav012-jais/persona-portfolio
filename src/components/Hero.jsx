@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, Sparkles, Zap, MessageSquare, Image as ImageIcon } from 'lucide-react';
 import { RESUME_DATA } from '../data/resumeData';
+import FluidOceanWave from './FluidOceanWave';
 
 export default function Hero({ onOpenAI }) {
   const { personal } = RESUME_DATA;
@@ -8,18 +9,8 @@ export default function Hero({ onOpenAI }) {
   return (
     <section id="hero" className="relative min-h-[720px] lg:min-h-[780px] pt-28 pb-14 flex items-center overflow-hidden bg-midnight-950">
       
-      {/* 1. Luminous Blue Ocean Tide / Fluid Silk Wave (Exact User Asset) */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 select-none">
-        <img
-          src="/images/hero-blue-tide.png"
-          alt="Luminous Blue Ocean Tide"
-          className="w-full h-full object-cover object-center opacity-95 mix-blend-screen filter brightness-105 contrast-105"
-          style={{
-            maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)',
-            WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)',
-          }}
-        />
-      </div>
+      {/* 1. Dynamic Animated Fluid Ocean Water Wave (Pure liquid, no rigid lines) */}
+      <FluidOceanWave variant="hero" opacity={0.92} />
 
       <div className="max-w-6xl mx-auto px-6 lg:px-8 w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">

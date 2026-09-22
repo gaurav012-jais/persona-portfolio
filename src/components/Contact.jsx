@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Mail, Phone, Send, MapPin, CheckCircle, ArrowUpRight, AlertCircle, Loader2 } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, FluidBrandLogo } from './Icons';
 import { RESUME_DATA } from '../data/resumeData';
+import FluidOceanWave from './FluidOceanWave';
 
 const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "28d9e152-7ab3-4641-92cc-f27aed7f6188";
 
@@ -227,19 +228,8 @@ export default function Contact({ onOpenAI }) {
       {/* 2. Dark Section with Direct Channels & Message Form */}
       <div id="contact-form-area" className="py-20 bg-midnight-950 relative overflow-hidden">
         
-        {/* Luminous Blue Ocean Tide / Fluid Silk Wave Background */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 select-none">
-          <img
-            src="/images/hero-blue-tide.png"
-            alt="Luminous Blue Fluid Wave"
-            className="w-full h-full object-cover object-center opacity-60 mix-blend-screen filter brightness-105"
-            style={{
-              transform: 'scaleX(-1) translateY(5%)',
-              maskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, transparent 100%)',
-              WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, transparent 100%)',
-            }}
-          />
-        </div>
+        {/* Dynamic Animated Fluid Ocean Water Wave (Pure liquid, no rigid lines) */}
+        <FluidOceanWave variant="contact" opacity={0.72} />
 
         <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
           

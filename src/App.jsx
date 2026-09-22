@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Bot } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -10,16 +10,32 @@ import CertificationsEducation from './components/CertificationsEducation';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AIAssistantModal from './components/AIAssistantModal';
+import WaterLoader from './components/WaterLoader';
 import InteractiveTouchFX from './components/InteractiveTouchFX';
 
 export default function App() {
   const [isAIOpen, setIsAIOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Lock scroll during water wave loading intro
+  useEffect(() => {
+    if (isLoading) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isLoading]);
 
   return (
     <div className="relative min-h-screen bg-midnight-950 text-slate-100 font-sans selection:bg-cyan-500 selection:text-white">
+      {/* Water Wave Loading Screen */}
+      {isLoading && <WaterLoader onComplete={() => setIsLoading(false)} />}
 
-      {/* Global Interactive Mouse, Touch & Scroll FX */}
-      <InteractiveTouchFX />
+      {/* Global Interactive Water Ripple & Caustic Aura Cursor FX */}
+      {!isLoading && <InteractiveTouchFX />}
 
       <div className="relative z-10">
         {/* Navigation Bar */}

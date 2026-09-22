@@ -1,25 +1,15 @@
 import React from 'react';
 import { Award, CheckCircle2, ShieldCheck } from 'lucide-react';
 import { RESUME_DATA } from '../data/resumeData';
+import FluidOceanWave from './FluidOceanWave';
 
 export default function CertificationsEducation() {
   const { certifications } = RESUME_DATA;
 
   return (
     <section id="credentials" className="py-20 bg-midnight-950 relative overflow-hidden">
-      {/* 1. 4K Luminous Blue Ocean Tide / Fluid Silk Wave Background (Matching Hero aesthetic) */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 select-none">
-        <img
-          src="/images/hero-blue-tide.png"
-          alt="Luminous Blue Fluid Wave"
-          className="w-full h-full object-cover object-center opacity-65 mix-blend-screen filter brightness-105"
-          style={{
-            transform: 'scaleX(1.15) translateY(-5%)',
-            maskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 18%, rgba(0,0,0,1) 82%, transparent 100%)',
-            WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 18%, rgba(0,0,0,1) 82%, transparent 100%)',
-          }}
-        />
-      </div>
+      {/* 1. Dynamic Animated Fluid Ocean Water Wave (Pure liquid, no rigid lines) */}
+      <FluidOceanWave variant="credentials" opacity={0.75} />
 
       <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
         

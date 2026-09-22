@@ -1,75 +1,16 @@
 import React from 'react';
 import { Database, Cpu, Globe, Server, Code2 } from 'lucide-react';
 import Tilt3DCard from './Tilt3DCard';
+import FluidOceanWave from './FluidOceanWave';
 
 export default function Skills() {
   return (
     <section id="skills" className="py-24 bg-midnight-950 relative overflow-hidden">
-      {/* 1. 4K Luminous Blue Ocean Tide / Fluid Silk Wave (Matching Hero aesthetic) */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 select-none">
-        <img
-          src="/images/hero-blue-tide.png"
-          alt="Luminous Blue Fluid Wave"
-          className="w-full h-full object-cover object-center opacity-85 mix-blend-screen filter brightness-110 contrast-105"
-          style={{
-            transform: 'scaleX(-1) rotate(1deg)',
-            maskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, transparent 100%)',
-            WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, transparent 100%)',
-          }}
-        />
-      </div>
+      {/* 1. Dynamic Animated Fluid Ocean Water Wave (Pure liquid, no rigid lines) */}
+      <FluidOceanWave variant="skills" opacity={0.88} />
 
       {/* Background Cosmic Atmosphere */}
       <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-[550px] h-[550px] bg-cyan-500/10 rounded-full blur-[160px] pointer-events-none" />
-
-      {/* Luminous Neon Liquid Blue Ribbon Wave flowing behind the glass cards */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden -z-0">
-        <svg className="w-full h-full opacity-60" viewBox="0 0 1440 600" fill="none" preserveAspectRatio="none">
-          <path
-            d="M-50,220 C250,140 450,420 750,300 C1050,180 1250,380 1500,260"
-            stroke="url(#neonRibbonGrad)"
-            strokeWidth="3.5"
-            filter="url(#ribbonGlow)"
-          />
-          <path
-            d="M-50,250 C280,180 480,450 780,330 C1080,210 1280,410 1500,290"
-            stroke="url(#neonRibbonGrad2)"
-            strokeWidth="1.5"
-            strokeDasharray="10 8"
-            opacity="0.75"
-          />
-          <path
-            d="M-50,220 C250,140 450,420 750,300 C1050,180 1250,380 1500,260 L1500,480 C1250,560 950,420 700,500 C450,580 200,470 -50,540 Z"
-            fill="url(#ribbonAreaAura)"
-            opacity="0.12"
-          />
-          <defs>
-            <filter id="ribbonGlow" x="-20%" y="-20%" width="140%" height="140%">
-              <feGaussianBlur stdDeviation="7" result="blur" />
-              <feMerge>
-                <feMergeNode in="blur" />
-                <feMergeNode in="SourceGraphic" />
-              </feMerge>
-            </filter>
-            <linearGradient id="neonRibbonGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#0284c7" stopOpacity="0.2" />
-              <stop offset="35%" stopColor="#38bdf8" stopOpacity="0.95" />
-              <stop offset="65%" stopColor="#0ea5e9" stopOpacity="0.95" />
-              <stop offset="100%" stopColor="#6366f1" stopOpacity="0.3" />
-            </linearGradient>
-            <linearGradient id="neonRibbonGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#38bdf8" stopOpacity="0" />
-              <stop offset="50%" stopColor="#22d3ee" stopOpacity="0.8" />
-              <stop offset="100%" stopColor="#818cf8" stopOpacity="0" />
-            </linearGradient>
-            <linearGradient id="ribbonAreaAura" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#0284c7" />
-              <stop offset="50%" stopColor="#0ea5e9" />
-              <stop offset="100%" stopColor="#0369a1" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
 
       <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
